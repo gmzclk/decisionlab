@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>DecisionLab | Karar Laboratuvarı</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -13,25 +16,41 @@
 
     <h2>Karar Laboratuvarı</h2>
 
-    <p>
-        Seçeneklerini belirle, kararını oluştur.
-    </p>
+    <p>Seçeneklerini belirle, kararını oluştur.</p>
 
     <h3>Karar Konusu</h3>
 
-    <input type="text" placeholder="Karar vermek istediğiniz konuyu yazın">
+    <input
+        type="text"
+        id="konu"
+        placeholder="Karar vermek istediğiniz konuyu yazın"
+    >
 
     <h3>Seçenekler</h3>
 
-    <input type="text" placeholder="Birinci seçenek">
+    <input
+        type="text"
+        id="secenek1"
+        placeholder="Birinci seçenek"
+    >
 
     <br><br>
 
-    <input type="text" placeholder="İkinci seçenek">
+    <input
+        type="text"
+        id="secenek2"
+        placeholder="İkinci seçenek"
+    >
 
     <br><br>
 
-    <button>Karar Oluştur</button>
+    <button onclick="kararOlustur()">
+        Karar Oluştur
+    </button>
+
+    <h2 id="sonuc" aria-live="polite"></h2>
+
+    <script src="script.js"></script>
 
 </body>
 </html>
