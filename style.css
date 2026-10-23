@@ -97,3 +97,22 @@ button:hover {
         max-width: 100%;
     }
 }
+/* KARAR SONUCU */
+
+#sonuc {
+    display: block;
+    max-width: 420px;
+    margin: 35px auto;
+    padding: 25px;
+    background: rgba(73, 227, 194, 0.10);
+    border: 1px solid #49e3c2;
+    border-radius: 15px;
+    color: #49e3c2;
+    font-size: 22px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+#sonuc:empty {
+    display: none;
+}
