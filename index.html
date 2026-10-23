@@ -13,7 +13,6 @@
 <body>
 
     <h1>DecisionLab</h1>
-
     <h2>Karar Laboratuvarı</h2>
 
     <p>Seçeneklerini belirle, kararını oluştur.</p>
@@ -28,23 +27,42 @@
 
     <h3>Seçenekler</h3>
 
-    <input
-        type="text"
-        id="secenek1"
-        placeholder="Birinci seçenek"
+    <div id="secenekler">
+
+        <div class="secenek-satiri">
+            <input
+                type="text"
+                class="secenek"
+                placeholder="Birinci seçenek"
+            >
+        </div>
+
+        <div class="secenek-satiri">
+            <input
+                type="text"
+                class="secenek"
+                placeholder="İkinci seçenek"
+            >
+        </div>
+
+    </div>
+
+    <br>
+
+    <button
+        type="button"
+        onclick="secenekEkle()"
+        class="ekle-btn"
     >
+        + Yeni Seçenek Ekle
+    </button>
 
-    <br><br>
+    <br>
 
-    <input
-        type="text"
-        id="secenek2"
-        placeholder="İkinci seçenek"
+    <button
+        type="button"
+        onclick="kararOlustur()"
     >
-
-    <br><br>
-
-    <button onclick="kararOlustur()">
         Karar Oluştur
     </button>
 
