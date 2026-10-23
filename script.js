@@ -1,25 +1,84 @@
+// DECISIONLAB 2.0
+// Dinamik seçenek ekleme ve rastgele karar oluşturma
+
+// Yeni seçenek ekleme fonksiyonu
+function secenekEkle() {
+
+    // Seçeneklerin bulunduğu alanı bul
+    const alan = document.getElementById("secenekler");
+
+    // Mevcut seçeneklerin sayısını öğren
+    const sayi = alan.querySelectorAll(".secenek").length;
+
+    // Yeni bir satır oluştur
+    const yeniSatir = document.createElement("div");
+
+    yeniSatir.className = "secenek-satiri";
+
+    // Yeni giriş kutusunu oluştur
+    const yeniInput = document.createElement("input");
+
+    yeniInput.type = "text";
+    yeniInput.className = "secenek";
+    yeniInput.placeholder = (sayi + 1) + ". seçenek";
+
+    // Giriş kutusunu satıra ekle
+    yeniSatir.appendChild(yeniInput);
+
+    // Satırı seçenekler alanına ekle
+    alan.appendChild(yeniSatir);
+
+    // Yeni kutuya odaklan
+    yeniInput.focus();
+}
+
+
+// Rastgele karar oluşturma fonksiyonu
 function kararOlustur() {
 
-    // Kullanıcının yazdığı seçenekleri al
-    let secenek1 = document.getElementById("secenek1").value.trim();
-    let secenek2 = document.getElementById("secenek2").value.trim();
+    // Kullanıcının yazdığı karar konusunu al
+    const konu = document.getElementById("konu").value.trim();
 
-    // Seçeneklerin boş olup olmadığını kontrol et
-    if (secenek1 === "" || secenek2 === "") {
-        alert("Lütfen iki seçeneği de doldurun.");
+    // Bütün seçenek kutularını bul
+    const kutular = document.querySelectorAll(".secenek");
+
+    // Dolu seçenekleri saklayacağımız liste
+    const secenekler = [];
+
+    // Kutuları tek tek kontrol et
+    kutular.forEach(function(kutu) {
+
+        const deger = kutu.value.trim();
+
+        if (deger !== "") {
+            secenekler.push(deger);
+        }
+
+    });
+
+    // En az iki seçenek girilmiş olmalı
+    if (secenekler.length < 2) {
+        alert("Lütfen en az iki seçenek girin.");
         return;
     }
 
-    // Seçenekleri bir listede topla
-    let secenekler = [secenek1, secenek2];
+    // Rastgele seçim yap
+    const rastgeleSayi = Math.floor(
+        Math.random() * secenekler.length
+    );
 
-    // Rastgele bir seçenek belirle
-    let rastgeleSayi = Math.floor(Math.random() * secenekler.length);
+    const secilen = secenekler[rastgeleSayi];
 
-    // Seçilen sonucu bul
-    let sonuc = secenekler[rastgeleSayi];
+    // Sonuç alanını bul
+    const sonucAlani = document.getElementById("sonuc");
 
-    // Sonucu ekranda göster
-    document.getElementById("sonuc").textContent =
-        "Seçilen alternatif: " + sonuc;
+    // Sonucu ekrana yaz
+    if (konu !== "") {
+        sonucAlani.textContent =
+            konu + " | Seçilen alternatif: " + secilen;
+    } else {
+        sonucAlani.textContent =
+            "Seçilen alternatif: " + secilen;
+    }
+
 }
