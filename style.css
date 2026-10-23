@@ -1,0 +1,99 @@
+/* GENEL SAYFA TASARIMI */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #101827, #20354b);
+    color: #ffffff;
+    text-align: center;
+    margin: 0;
+    padding: 60px 20px;
+    min-height: 100vh;
+}
+
+/* ANA BAŞLIK */
+
+h1 {
+    font-size: 48px;
+    color: #49e3c2;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+h2 {
+    font-size: 25px;
+    font-weight: 400;
+    color: #e2e8f0;
+}
+
+h3 {
+    color: #49e3c2;
+    margin-top: 30px;
+}
+
+/* AÇIKLAMA METNİ */
+
+p {
+    font-size: 16px;
+    color: #b8c6d8;
+    margin-bottom: 40px;
+}
+
+/* VERİ GİRİŞ KUTULARI */
+
+input {
+    width: 100%;
+    max-width: 420px;
+    padding: 15px;
+    margin: 8px auto;
+    border: 1px solid #40536b;
+    border-radius: 10px;
+    background-color: #1b293c;
+    color: white;
+    font-size: 15px;
+    outline: none;
+}
+
+input:focus {
+    border-color: #49e3c2;
+    box-shadow: 0 0 10px rgba(73, 227, 194, 0.2);
+}
+
+/* KARAR OLUŞTUR DÜĞMESİ */
+
+button {
+    background: linear-gradient(135deg, #49e3c2, #20bfa5);
+    color: #10202d;
+    border: none;
+    padding: 16px 35px;
+    font-size: 17px;
+    font-weight: bold;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-top: 25px;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(73, 227, 194, 0.3);
+}
+
+/* TELEFON EKRANLARI */
+
+@media (max-width: 600px) {
+    body {
+        padding: 35px 15px;
+    }
+
+    h1 {
+        font-size: 36px;
+    }
+
+    input {
+        max-width: 100%;
+    }
+}
